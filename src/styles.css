@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  background: #0b061f;
+  color: white;
+}
+
+.screen {
+  height: 100vh;
+  padding: 24px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.gradient {
+  background: linear-gradient(135deg, #ff5fa2, #7f5cff);
+}
+
+.timer {
+  font-size: 3rem;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 999px;
+  background: white;
+  color: black;
+  font-weight: 600;
+}
+
+.card {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 500px;
+}
+
+.memory-img {
+  width: 260px;
+  border-radius: 20px;
+}
+
+.auto-timer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.auto-timer span {
+  min-width: 24px;
+}
+
+p {
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+  opacity: 0.9;
+}
+
+.memory-img {
+  max-width: 80vw;
+}
