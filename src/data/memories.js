@@ -1,14 +1,18 @@
+import img1 from "../assets/images/1.jpg";
+import img2 from "../assets/images/2.jpg";
+import img3 from "../assets/images/3.jpg";
+
 export const memories = [
   {
-    img: "/images/1.jpg",
+    img: img1,
     text: "The moment I noticed you.",
   },
   {
-    img: "/images/2.jpg",
+    img: img2,
     text: "This smile still makes my day.",
   },
   {
-    img: "/images/3.jpg",
+    img: img3,
     text: "This feels like home.",
   },
 ];

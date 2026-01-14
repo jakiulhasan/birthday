@@ -1,24 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function useAutoNext(onNext, duration = 10, key = "") {
   const [timeLeft, setTimeLeft] = useState(duration);
+  const onNextRef = useRef(onNext);
+
+  useEffect(() => {
+    onNextRef.current = onNext;
+  }, [onNext]);
 
   useEffect(() => {
     setTimeLeft(duration);
-  }, [key]);
 
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      onNext();
-      return;
-    }
-
-    const t = setTimeout(() => {
-      setTimeLeft((t) => t - 1);
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          onNextRef.current();
+          return 0;
+        }
+        return prev - 1;
+      });
     }, 1000);
 
-    return () => clearTimeout(t);
-  }, [timeLeft]);
+    return () => clearInterval(interval);
+  }, [key, duration]);
 
   return timeLeft;
 }
